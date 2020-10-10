@@ -137,7 +137,7 @@ This notation gives the tight upper bound of the given function. Generally, if i
 For example, if f(n)= n<sup>4</sup> + 100n<sup>2</sup> + 10n + 50 is the given algorithm, then n<sup>4</sup> is g(n).
 That means g(n) gives the maximum rate of growth for f(n) at larger values of n.
 
-![Big O Graph](./Images/big-o-graph.png)
+![Big O Graph](./Images/big-o-graph.PNG)
 
 In details, O-notation is defined as 
 > O(g(n)) = {f(n): there exist positive constants c and n<sub>0</sub> such that 0 ≤ f(n) ≤ cg(n) for all n > n<sub>0</sub>}
@@ -148,7 +148,7 @@ important
 ## Omega-Ω Notation [Lower Bounding Function]
 Similar to the O discussion, this notation gives the tighter lower bound of the given algorithm and we represent it as f(n) = Ω(g(n)). That means, at larger values of n, the tighter lower bound of f(n) is g(n). For example, if f(n) = 100n<sup>2</sup> + 10n + 50, g(n) is Ω(n<sup>2</sup>).
 
-![Omega Graph](./Images/omega-graph.png)
+![Omega Graph](./Images/omega-graph.PNG)
 
 The Ω notation can be defined as 
 > Ω(g(n)) = {f(n): there exist positive constants c and n<sub>0</sub> such that 0 ≤ cg(n) ≤ f(n) for all n ≥ n<sub>0</sub>}. 
@@ -156,7 +156,7 @@ The Ω notation can be defined as
 g(n) is an asymptotic tight lower bound for f(n). Our objective is to give the largest rate of growth g(n) which is less than or equal to the given algorithm’s rate of growth f(n).
 
 ## Theta-Θ Notation [Order Function]
-![Theta Graph](./Images/theta-graph.png)
+![Theta Graph](./Images/theta-graph.PNG)
 
 This notation decides whether the upper and lower bounds of a given function (algorithm) are the same. The average running time of an algorithm is always between the lower bound and the upper bound. If the upper bound (O) and lower bound (Ω) give the same result, then the Θ notation will also have the same rate of growth. As a result, the average case will also be the same. For a given function (algorithm), if the rates of growth (bounds) for O and Ω are not the same, then the rate of growth for the Θ case may not be the same. In this case, we need to consider all possible time complexities and take the average of those
 
