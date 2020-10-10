@@ -119,18 +119,65 @@ There are three types of analysis:
 > <center>Lower Bound <= Average Time <= Upper Bound</center>
 
 For a given algorithm, we can represent the best, worst and average cases in the form of expressions. As an example, let f(n) be the function which represents the given algorithm.
-> <center>f(n) = n<sup>2</sup> + 500, for worst case</center>
-> <center>f(n) = n + 100n + 500, for best case</center>
+
+> f(n) = n<sup>2</sup> + 500, for worst case
+
+> f(n) = n + 100n + 500, for best case
 
 
 
-<!-- ## Asymptotic Notation
+## Asymptotic Notation
+Having expressions for thee best, average and worst cases, for all three cases we need to identify the upper and lower bounds. To represent these upper and lower bounds, we need some kind of syntax which we will discuss further.
+
+Let us assume that the given algorithm is represented in the form of function f(n).
+
 ## Big-O Notation [Upper Bounding Function]
-## Omega Notation [Lower Bounding Function]
+This notation gives the tight upper bound of the given function. Generally, if it represented as f(n)=O(g(n)). That means, at larger values of n, the upper bound of f(n) is g(n).
+
+For example, if f(n)= n<sup>4</sup> + 100n<sup>2</sup> + 10n + 50 is the given algorithm, then n<sup>4</sup> is g(n).
+That means g(n) gives the maximum rate of growth for f(n) at larger values of n.
+
+![Big O Graph](./images/big-o-graph.png)
+
+In details, O-notation is defined as 
+> O(g(n)) = {f(n): there exist positive constants c and n<sub>0</sub> such that 0 ≤ f(n) ≤ cg(n) for all n > n<sub>0</sub>}
+
+g(n) is an asymptotic tigh upper bound for f(n). Our objective is to give the smallest rate of growth g(n) which is greater than or equal to the given algorithms' rate of growth/(n). Generally we discard lower values of n. That means the rate of growth at lower values of n is not
+important
+
+## Omega-Ω Notation [Lower Bounding Function]
+Similar to the O discussion, this notation gives the tighter lower bound of the given algorithm and we represent it as f(n) = Ω(g(n)). That means, at larger values of n, the tighter lower bound of f(n) is g(n). For example, if f(n) = 100n<sup>2</sup> + 10n + 50, g(n) is Ω(n<sup>2</sup>).
+
+![Omega Graph](./images/omega-graph.png)
+
+The Ω notation can be defined as 
+> Ω(g(n)) = {f(n): there exist positive constants c and n<sub>0</sub> such that 0 ≤ cg(n) ≤ f(n) for all n ≥ n<sub>0</sub>}. 
+
+g(n) is an asymptotic tight lower bound for f(n). Our objective is to give the largest rate of growth g(n) which is less than or equal to the given algorithm’s rate of growth f(n).
+
 ## Theta-Θ Notation [Order Function]
-## Important Notes
+![Theta Graph](./images/theta-graph.png)
+
+This notation decides whether the upper and lower bounds of a given function (algorithm) are the same. The average running time of an algorithm is always between the lower bound and the upper bound. If the upper bound (O) and lower bound (Ω) give the same result, then the Θ notation will also have the same rate of growth. As a result, the average case will also be the same. For a given function (algorithm), if the rates of growth (bounds) for O and Ω are not the same, then the rate of growth for the Θ case may not be the same. In this case, we need to consider all possible time complexities and take the average of those
+
+It is defined as 
+> Θ(g(n)) = {f(n): there exist positive constants c1 ,c2 and n0 such that 0 ≤ c1g(n) ≤ f(n) ≤ c2g(n) for all n ≥ n0}
+
+## Important Notes 
+We generally focus on the upper bound (O) because knowing the lower bound (Ω) of an algorithm is of no practical importance, and we use the Θ notation if the upper bound (O) and lower bound (Ω) are the same.
+
 ## Why is it called Asymptotic Analysis?
+From the discussion above (for all three notations: worst case, best case, and average case), we can easily understand that, in every case for a given function f(n) we are trying to find another function g(n) which approximates f(n) at higher values of n. That means g(n) is also a curve which approximates f(n) at higher values of n. 
+
+In mathematics we call such a curve an asymptotic curve. In other terms, g(n) is the asymptotic curve for f(n). For this reason, we call algorithm analysis asymptotic analysis.
+
 ## Guidelines for Asymptotic Analysis
+1. **Loops** 
+2. **Nested Loops**
+3. **Consecutive Statements**
+4. **If-then-else statements**
+5. **Logarithmic Complexity**
+
 ## Simplyfying properties of asymptotic notations
 ## Commonly used Logarithms and Summations
 ## Master Theorem for Divide and Conquer Recurrences
@@ -139,4 +186,4 @@ For a given algorithm, we can represent the best, worst and average cases in the
 ## Variant of Subtraction and Conquer Master Theorem
 ## Method of Guessing and Confirming
 ## Amortized Analysis
-## Algorithms Analysis: Problems & Solutions -->
+## Algorithms Analysis: Problems & Solutions
